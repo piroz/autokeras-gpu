@@ -1,0 +1,13 @@
+version: "2.3"
+
+services:
+  autokeras:
+    build:
+      context: ./
+    shm_size: 2G
+    environment:
+      - CUDA_VISIBLE_DEVICES=1
+    volumes:
+      - "./app:/app"
+
+    command: python mnist.py
