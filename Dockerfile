@@ -4,7 +4,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-RUN conda install -y keras tqdm==4.30.1
+RUN conda install -y keras
 
 RUN pip install tqdm==4.31.0
 
