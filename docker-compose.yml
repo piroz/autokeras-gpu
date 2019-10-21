@@ -10,4 +10,4 @@ services:
     volumes:
       - "./app:/app"
 
-    command: python mnist.py
+    command: python3 mnist.py

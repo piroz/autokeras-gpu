@@ -1,22 +1,15 @@
-FROM nvidia/cuda:10.0-cudnn7-runtime
+FROM pytorch/pytorch
 
 RUN mkdir /app
 
 WORKDIR /app
 
-RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
-    gcc \
-    build-essential \
-    python3-setuptools \
-    python3-pip \
-    && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN conda install -y keras tqdm==4.30.1
 
-RUN pip3 install --upgrade pip
+RUN pip install tqdm==4.31.0
 
-RUN pip3 install keras
+RUN pip install torch==1.0.1.post2
 
-RUN pip3 install numpy
+RUN conda skeleton pypi autokeras
 
-RUN pip3 install autokeras
+RUN conda build autokeras
