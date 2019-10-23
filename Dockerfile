@@ -1,4 +1,6 @@
-FROM pytorch/pytorch
+FROM pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
+
+ADD COPY install_autokeras.sh /tmp/
 
 RUN mkdir /app
 
@@ -6,12 +8,4 @@ WORKDIR /app
 
 RUN conda install -y keras
 
-RUN conda install -c conda-forge tqdm==4.31.0
-
-RUN pip install torch==1.0.1.post2
-
-RUN conda skeleton pypi autokeras
-
-RUN conda build autokeras
-
-RUN conda install --use-local autokeras
+RUN bash /tmp/install_autokeras.sh

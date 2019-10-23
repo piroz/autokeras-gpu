@@ -1,5 +1,6 @@
 # autokeras-gpu
-run autokeras in nvidia-docker
+
+Execute `autokeras-0.40` with `pytorch / pytorch: 1.2-cuda10.0-cudnn7-runtime`
 
 # pull image from dockerhub and run
 
