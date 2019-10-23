@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
 
-ADD COPY install_autokeras.sh /tmp/
+COPY install_autokeras.sh /tmp/
 
 RUN mkdir /app
 
